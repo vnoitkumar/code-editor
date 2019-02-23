@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JS Executer | Vnoit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./lib/codemirror/lib/codemirror.css"
+    />
+    <script src="./lib/codemirror/lib/codemirror.js"></script>
+    <script src="./lib/codemirror/mode/javascript/javascript.js"></script>
+    <script src="./lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+    <style>
+      iframe {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <iframe id="result"></iframe>
+    <button onclick="run()">Run</button>
+    <button onclick="clean()">Clear</button>
+    <button onclick="cleanConsole()">Clear Console</button>
+    <br />
+    <hr />
+    <textarea id="javascript"></textarea>
+  </body>
+
+  <script>
+    let javascript = document.getElementById('javascript');
+
+    let javascriptOptions = {
+      height: '50px',
+      value: 'console.log("Hello, world!")',
+      mode: 'javascript',
+      lineNumbers: true,
+      autofocus: true
+    };
+
+    let javascriptCodeMirror = CodeMirror.fromTextArea(
+      javascript,
+      javascriptOptions
+    );
+
+    function run() {
+      let scriptText = javascriptCodeMirror.getValue('\n');
+      let iframe = document.getElementById('result');
+      let head = iframe.contentWindow.document.getElementsByTagName('head')[0];
+      let script = iframe.contentWindow.document.createElement('script');
+      script.id = 'scriptContainer';
+      script.text = scriptText;
+      script.type = 'text/javascript';
+      head.appendChild(script);
+      iframe.contentWindow.location.reload();
+    }
+
+    function clean() {
+      javascriptCodeMirror.setValue('');
+    }
+
+    function cleanConsole() {
+      console.clear();
+    }
+  </script>
+</html>
