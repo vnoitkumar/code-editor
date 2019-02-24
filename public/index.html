@@ -11,10 +11,21 @@
     <link href="./css/normalize.css" rel="stylesheet" />
     <link href="./css/custom-codemirror.css" rel="stylesheet" />
     <link href="./css/style.css" rel="stylesheet" />
+
+    <link
+      href="./bower_components/codemirror/addon/lint/lint.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="./bower_components/codemirror/addon/fold/foldgutter.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <iframe id="result"></iframe>
+
     <div class="btn disable-selection" id="run_btn" onclick="run()">
       <span>Run</span>
       <img src="./img/play-button.svg" alt="run" />
@@ -28,9 +39,10 @@
 
     <br />
     <hr />
+
     <textarea id="javascript"></textarea>
 
-    Open the console and see the output!
+    Run the Script and see the output in browser console!
     <br />
     Created by
     <a
@@ -43,6 +55,19 @@
     </a>
   </body>
   <script src="./bower_components/codemirror/lib/codemirror.js"></script>
+
   <script src="./bower_components/codemirror/mode/javascript/javascript.js"></script>
+
+  <script src="./bower_components/codemirror/addon/selection/active-line.js"></script>
+  <script src="./bower_components/codemirror/addon/edit/matchbrackets.js"></script>
+
+  <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+  <script src="./bower_components/codemirror/addon/lint/lint.js"></script>
+  <script src="./bower_components/codemirror/addon/lint/javascript-lint.js"></script>
+
+  <script src="./bower_components/codemirror/addon/fold/foldcode.js"></script>
+  <script src="./bower_components/codemirror/addon/fold/foldgutter.js"></script>
+  <script src="./bower_components/codemirror/addon/fold/brace-fold.js"></script>
+
   <script src="./js/script.js"></script>
 </html>

@@ -2,15 +2,24 @@ let javascript = document.getElementById('javascript');
 javascript.value =
   'multiply = (a, b) => a * b;\n\nconsole.log(multiply(29, 77));';
 
-let javascriptOptions = {
-  mode: 'javascript',
-  lineNumbers: true,
-  autofocus: true
-};
-
 let javascriptCodeMirror = CodeMirror.fromTextArea(
-  javascript,
-  javascriptOptions
+  document.getElementById('javascript'),
+  {
+    mode: 'javascript',
+    lineNumbers: true,
+    autofocus: true,
+    styleActiveLine: true,
+    matchBrackets: true,
+    lint: {
+      esversion: 6
+    },
+    foldGutter: true,
+    gutters: [
+      'CodeMirror-lint-markers',
+      'CodeMirror-linenumbers',
+      'CodeMirror-foldgutter'
+    ]
+  }
 );
 
 function run() {

@@ -2,7 +2,8 @@ body {
   margin: 10px;
   font: 16px/1.5 sans-serif;
 }
-iframe {
+iframe,
+#javascript {
   display: none;
 }
 a {
