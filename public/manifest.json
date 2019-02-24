@@ -1,0 +1,21 @@
+{
+  "short_name": "JS Executer",
+  "name": "Javascript Executer",
+  "icons": [
+    {
+      "src": "/images/logo-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#f7df1e",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#f7df1e"
+}

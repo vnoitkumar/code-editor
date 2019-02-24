@@ -6,6 +6,11 @@ iframe,
 #javascript {
   display: none;
 }
+h1 {
+  font-size: 16px;
+  font-weight: 100;
+  display: inline-block;
+}
 a {
   text-decoration: none;
 }

@@ -3,14 +3,53 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>JS Executer | Vnoit</title>
+    <title>JS Executer | VnoitKumar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="JS Executer By VnoitKumar #vnoitkumar" />
+
+    <!-- Mobile App Meta Tag -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#f7df1e" />
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="JS Executer | VnoitKumar" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jsexecuter.vnoit.com/" />
+    <meta property="og:description" content="JS Executer By VnoitKumar" />
+    <meta name="og:email" content="vnoitkumar@gmail.com" />
+    <meta name="og:phone_number" content="+917708521528" />
+    <meta name="og:latitude" content="13.0827" />
+    <meta name="og:longitude" content="80.2707" />
+    <meta name="og:locality" content="Chennai" />
+
+    <!-- OpenGraph Meta Tags - Image -->
+    <meta
+      property="og:image"
+      content="https://jsexecuter.vnoit.com/images/fb-sharing.png"
+    />
+    <meta property="og:image:width" content="540" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- Twitter Meta Tag -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@vnoitkumar" />
+    <meta name="twitter:creator" content="@vnoitkumar" />
+    <meta
+      name="twitter:image"
+      content="https://jsexecuter.vnoit.com/images/twiter-sharing.png"
+    />
+    <meta name="twitter:title" content="JS Executer | VnoitKumar" />
+    <meta name="twitter:description" content="JS Executer By VnoitKumar" />
+    <meta name="twitter:image:alt" content="#vnoitkumar" />
+
+    <link rel="canonical" href="https://jsexecuter.vnoit.com/" />
 
     <link rel="shortcut icon" href="./favicon.ico" />
 
     <link href="./css/normalize.css" rel="stylesheet" />
     <link href="./css/custom-codemirror.css" rel="stylesheet" />
-    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/main.css" rel="stylesheet" />
 
     <link
       href="./bower_components/codemirror/addon/lint/lint.css"
@@ -21,6 +60,8 @@
       href="./bower_components/codemirror/addon/fold/foldgutter.css"
       rel="stylesheet"
     />
+
+    <link rel="manifest" href="/manifest.json" />
   </head>
 
   <body>
@@ -28,7 +69,7 @@
 
     <div class="btn disable-selection" id="run_btn" onclick="run()">
       <span>Run</span>
-      <img src="./img/play-button.svg" alt="run" />
+      <img src="./images/play-button.svg" alt="run" />
     </div>
 
     <div class="btn disable-selection" id="clear_btn" onclick="clean()">
@@ -44,14 +85,15 @@
 
     Run the Script and see the output in browser console!
     <br />
-    Created by
+    <h1>JS Executer Created by VnoitKumar</h1>
+    -
     <a
       target="”_blank”"
       href="http://www.google.com/search?q=%23vnoitkumar"
       rel="noreferrer"
       aria-label="hashtag"
     >
-      VnoitKumar
+      #VnoitKumar
     </a>
   </body>
   <script src="./bower_components/codemirror/lib/codemirror.js"></script>
@@ -61,7 +103,7 @@
   <script src="./bower_components/codemirror/addon/selection/active-line.js"></script>
   <script src="./bower_components/codemirror/addon/edit/matchbrackets.js"></script>
 
-  <script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+  <script src="./js/jshint.js"></script>
   <script src="./bower_components/codemirror/addon/lint/lint.js"></script>
   <script src="./bower_components/codemirror/addon/lint/javascript-lint.js"></script>
 
@@ -70,4 +112,11 @@
   <script src="./bower_components/codemirror/addon/fold/brace-fold.js"></script>
 
   <script src="./js/script.js"></script>
+
+  <script>
+    // PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </html>
