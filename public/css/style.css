@@ -1,0 +1,37 @@
+body {
+  margin: 10px;
+  font: 16px/1.5 sans-serif;
+}
+iframe {
+  display: none;
+}
+a {
+  text-decoration: none;
+}
+.btn {
+  text-align: center;
+  display: inline-block;
+  background-color: gray;
+  color: #fff;
+  padding: 0.5em;
+  outline: 0;
+  border: 2px solid #a2a2a2;
+  width: 80px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  margin: 1px;
+}
+.disable-selection {
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+#run_btn {
+  background-color: #0f9d58;
+}
+#clear_btn {
+  background-color: #4285f4;
+}

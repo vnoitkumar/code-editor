@@ -5,67 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>JS Executer | Vnoit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="./lib/codemirror/lib/codemirror.css"
-    />
-    <script src="./lib/codemirror/lib/codemirror.js"></script>
-    <script src="./lib/codemirror/mode/javascript/javascript.js"></script>
-    <script src="./lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
 
-    <style>
-      iframe {
-        display: none;
-      }
-    </style>
+    <link rel="shortcut icon" href="./favicon.ico" />
+
+    <link href="./css/normalize.css" rel="stylesheet" />
+    <link href="./css/custom-codemirror.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
   </head>
 
   <body>
     <iframe id="result"></iframe>
-    <button onclick="run()">Run</button>
-    <button onclick="clean()">Clear</button>
-    <button onclick="cleanConsole()">Clear Console</button>
+    <div class="btn disable-selection" id="run_btn" onclick="run()">
+      <span>Run</span>
+      <img src="./img/play-button.svg" alt="run" />
+    </div>
+
+    <div class="btn disable-selection" id="clear_btn" onclick="clean()">
+      <span>
+        Clear
+      </span>
+    </div>
+
     <br />
     <hr />
     <textarea id="javascript"></textarea>
+
+    Open the console and see the output!
+    <br />
+    Created by
+    <a
+      target="”_blank”"
+      href="http://www.google.com/search?q=%23vnoitkumar"
+      rel="noreferrer"
+      aria-label="hashtag"
+    >
+      VnoitKumar
+    </a>
   </body>
-
-  <script>
-    let javascript = document.getElementById('javascript');
-
-    let javascriptOptions = {
-      height: '50px',
-      value: 'console.log("Hello, world!")',
-      mode: 'javascript',
-      lineNumbers: true,
-      autofocus: true
-    };
-
-    let javascriptCodeMirror = CodeMirror.fromTextArea(
-      javascript,
-      javascriptOptions
-    );
-
-    function run() {
-      let scriptText = javascriptCodeMirror.getValue('\n');
-      let iframe = document.getElementById('result');
-      let head = iframe.contentWindow.document.getElementsByTagName('head')[0];
-      let script = iframe.contentWindow.document.createElement('script');
-      script.id = 'scriptContainer';
-      script.text = scriptText;
-      script.type = 'text/javascript';
-      head.appendChild(script);
-      iframe.contentWindow.location.reload();
-    }
-
-    function clean() {
-      javascriptCodeMirror.setValue('');
-    }
-
-    function cleanConsole() {
-      console.clear();
-    }
-  </script>
+  <script src="./bower_components/codemirror/lib/codemirror.js"></script>
+  <script src="./bower_components/codemirror/mode/javascript/javascript.js"></script>
+  <script src="./js/script.js"></script>
 </html>
